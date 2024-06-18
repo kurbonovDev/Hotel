@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_bg_app"
+    android:layout_height="match_parent"
+    tools:context=".presentation.registration.regist.RegisterFragment">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="65dp"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <ImageView
+                android:id="@+id/im_user"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="52dp"
+                android:src="@drawable/ic_user"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/white"
+                android:hint="Введите имя"
+                android:inputType="text"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/im_user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/im_user"
+                app:layout_constraintTop_toTopOf="@+id/im_user" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/user_name"
+                app:layout_constraintStart_toStartOf="@+id/im_user"
+                app:layout_constraintTop_toBottomOf="@+id/user_name"/>
+
+            <ImageView
+                android:id="@+id/im_email"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="52dp"
+                android:src="@drawable/ic_email_"
+                app:layout_constraintStart_toStartOf="@id/im_user"
+                app:layout_constraintTop_toBottomOf="@id/im_user" />
+
+            <EditText
+                android:id="@+id/user_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Введите почту"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp"
+                android:textColorHint="@color/black"
+
+                app:layout_constraintBottom_toBottomOf="@+id/im_email"
+                app:layout_constraintEnd_toEndOf="@+id/user_name"
+                app:layout_constraintStart_toStartOf="@+id/user_name"
+                app:layout_constraintTop_toTopOf="@+id/im_email" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/user_email"
+                app:layout_constraintStart_toStartOf="@+id/im_email"
+                app:layout_constraintTop_toBottomOf="@+id/user_email"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="52dp"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintStart_toStartOf="@id/im_email"
+                app:layout_constraintTop_toBottomOf="@id/im_email" />
+
+            <TextView
+                android:id="@+id/code_country_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:text="+992"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/user_email"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <EditText
+                android:id="@+id/user_phone"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/white"
+                android:hint="Введите номер телефона"
+                android:inputType="phone"
+                android:maxLength="9"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textColorHint="@color/black"
+
+                app:layout_constraintBottom_toBottomOf="@id/code_country_phone"
+                app:layout_constraintEnd_toEndOf="@+id/user_email"
+                app:layout_constraintStart_toEndOf="@id/code_country_phone"
+                app:layout_constraintTop_toTopOf="@id/code_country_phone" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/user_phone"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/user_phone" />
+
+            <ImageView
+                android:id="@+id/ic_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="52dp"
+                android:src="@drawable/ic_password"
+                app:layout_constraintStart_toStartOf="@id/imageView"
+                app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+            <EditText
+                android:id="@+id/user_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColorHint="@color/black"
+
+                android:hint="Введите пароль"
+                app:layout_constraintBottom_toBottomOf="@id/ic_password"
+                app:layout_constraintEnd_toEndOf="@id/user_phone"
+                app:layout_constraintStart_toStartOf="@+id/code_country_phone"
+                app:layout_constraintTop_toTopOf="@id/ic_password" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/user_password"
+                app:layout_constraintStart_toStartOf="@+id/ic_password"
+                app:layout_constraintTop_toBottomOf="@+id/user_password" />
+
+
+            <TextView
+                android:id="@+id/btn_register"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:text="Создать аккаунт"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/create_acc_bg"
+                app:layout_constraintEnd_toEndOf="@+id/user_password"
+                app:layout_constraintStart_toStartOf="@+id/ic_password"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+
+            <TextView
+                android:id="@+id/have_acc"
+                android:layout_width="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="31dp"
+                android:gravity="center"
+                android:text="@string/have_acc"
+                android:layout_marginHorizontal="65dp"
+                android:layout_height="wrap_content"/>
+
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

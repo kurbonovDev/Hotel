@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hotel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="have_acc"><font color="#000">Already have account?</font> <font color="#43A047">Sign In!</font>  </string>
+    <string name="dont_have_acc"><font color="#000">Dont have an account?</font> <font color="#43A047">Sign Up!</font>  </string>
+    <string name="forgotpass">Please enter your registered email address to recover your password</string>
+</resources>

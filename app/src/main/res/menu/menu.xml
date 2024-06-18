@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_"
+        android:orderInCategory="1"
+        android:title="Главная"
+        app:showAsAction="always|collapseActionView" />
+
+    <item
+        android:id="@+id/roomsFragment"
+        android:icon="@drawable/ic_room"
+        android:orderInCategory="2"
+        android:title="Комнаты"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/ic_history"
+        android:orderInCategory="3"
+        android:title="История"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_profile"
+        android:orderInCategory="4"
+        android:title="Личный кабинет"
+        app:showAsAction="always|collapseActionView" />
+
+</menu>
