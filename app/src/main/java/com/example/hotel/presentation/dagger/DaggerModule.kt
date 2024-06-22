@@ -1,5 +1,7 @@
 package com.example.hotel.presentation.dagger
 
+import com.example.hotel.data.datasource.ApartmentDataSource
+import com.example.hotel.data.datasource.ApartmentDataSourceImpl
 import com.example.hotel.data.remote.HomeAPI
 import com.example.hotel.data.remote.RegistApi
 import com.example.hotel.data.repository.BookApartmentsRepositoryImp
@@ -10,6 +12,8 @@ import com.example.hotel.data.repository.GetUserRepositoryImp
 import com.example.hotel.data.repository.LoginRepositoryImp
 import com.example.hotel.data.repository.PreRegistRepositoryImp
 import com.example.hotel.data.repository.RegistRepositoryImp
+import com.example.hotel.data.pagging.ApartmentRepository
+import com.example.hotel.domain.repository.GetApartmentsRepository
 import com.example.hotel.domain.useCases.BookApartmentUseCase
 import com.example.hotel.domain.useCases.GetApartmentsHistoryUseCase
 import com.example.hotel.domain.useCases.GetApartmentsUseCase
@@ -112,14 +116,13 @@ class DaggerModule {
 
     @Provides
     @Singleton
-    fun provideHomeRepositoryImp(api: HomeAPI) = GetApartmentsRepositoryImp(api)
+    fun provideHomeRepositoryImp(apartmentDataSource: ApartmentDataSource) = GetApartmentsRepositoryImp(apartmentDataSource)
 
     @Provides
     @Singleton
     fun provideGetApartmentUseCases(
-        getApartmentsRepositoryImp: GetApartmentsRepositoryImp,
-        retrofit: Retrofit
-    ) = GetApartmentsUseCase(getApartmentsRepositoryImp, retrofit)
+        apartmentsRepository: GetApartmentsRepository
+    ) = GetApartmentsUseCase(apartmentsRepository)
 
     @Provides
     @Singleton
@@ -167,4 +170,22 @@ class DaggerModule {
         retrofit: Retrofit
     ) = GetUserUseCase(getUserRepositoryImp, retrofit)
 
+
+    @Provides
+    @Singleton
+    fun provideGetApartmentsRepository(apartmentDataSource: ApartmentDataSource): GetApartmentsRepository {
+        return GetApartmentsRepositoryImp(apartmentDataSource)
+    }
+
+    @Provides
+    @Singleton
+    fun provideApartmentRepository(apartmentDataSource: ApartmentDataSource): ApartmentRepository {
+        return ApartmentRepository(apartmentDataSource)
+    }
+
+    @Provides
+    @Singleton
+    fun provideApartmentDataSource(homeAPI: HomeAPI):ApartmentDataSource{
+        return ApartmentDataSourceImpl(homeAPI)
+    }
 }

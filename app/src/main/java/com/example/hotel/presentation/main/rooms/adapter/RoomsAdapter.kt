@@ -19,10 +19,10 @@ class RoomsAdapter(private val rooms:RoomsDTO, private val onClick:(RoomItem)->U
         return RoomsViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = rooms.data.size
+    override fun getItemCount(): Int = rooms.data.records.size
 
     override fun onBindViewHolder(holder: RoomsViewHolder, position: Int) {
-        val currentItem = rooms.data[position]
+        val currentItem = rooms.data.records[position]
         with(holder.binding){
 
             Glide.with(holder.itemView)

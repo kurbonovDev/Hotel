@@ -69,6 +69,8 @@ dependencies {
     implementation ("com.squareup.okhttp3:okhttp:4.7.2")
     implementation ("com.google.android.material:material:1.12.0")
 
+    implementation ("androidx.paging:paging-runtime:3.3.0")
+
     implementation ("com.google.dagger:hilt-android:2.51.1")
     kapt ("com.google.dagger:hilt-compiler:2.51.1")
 

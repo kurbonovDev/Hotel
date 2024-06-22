@@ -174,7 +174,7 @@ class RoomInfoFragment : Fragment() {
                         )
 
                     ){
-                        homeViewModel.clearData()
+                       // homeViewModel.clearData()
                         homeViewModel.getApartments()
 
                     }

@@ -16,8 +16,8 @@ import retrofit2.http.Query
 
 interface HomeAPI {
 
-    @GET("/apartment/get")
-    suspend fun getApartments():Response<RoomsDTO>
+    @GET("apartment/get")
+    suspend fun getApartments(@Query("page") page: Int): Response<RoomsDTO>
 
 
     @GET("apartment/getImages")
